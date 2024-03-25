@@ -110,9 +110,3 @@ print(cons)
 
 ifcond = [i*5 if i==5 else 0 for i in z]
 print(ifcond)
-
-
-
-
-
-
