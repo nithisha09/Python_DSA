@@ -170,11 +170,3 @@ print("*********************")
 print("Deletion")
 newArr = numpy.delete(twod,1,axis=0)
 print(newArr)
-
-
-
-
-
-
- 
-
