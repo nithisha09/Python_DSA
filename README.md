@@ -1,4 +1,9 @@
 DSA Concepts in Python
-1.Arrays - 25.03.2024
-2.Lists - 25.03.2024
-3.Tuples - 25.03.2024
+<!-- Basics -->
+<!-- 25.03.2024 -->
+1.Arrays
+2.Lists
+3.Tuples
+<!-- 26.03.2024 -->
+4.Dictionary
+5.OOPS
