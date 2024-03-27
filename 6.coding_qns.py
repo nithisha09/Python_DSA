@@ -89,9 +89,3 @@ def rotate(matrix):
     for i in matrix:
         i.reverse()
     return matrix
-
-        
-
-    
-
-
