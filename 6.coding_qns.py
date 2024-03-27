@@ -89,3 +89,17 @@ def rotate(matrix):
     for i in matrix:
         i.reverse()
     return matrix
+
+def max_value_key(my_dict):
+    # TODO
+    maximum = 0
+    ans = ""
+    for k,v in my_dict.items():
+        if maximum<v:
+            maximum = v
+            ans = k
+    return ans
+
+my_dict = {'a': 5, 'b': 9, 'c': 2}
+print(max_value_key(my_dict))
+print(max(my_dict,key=my_dict.get))

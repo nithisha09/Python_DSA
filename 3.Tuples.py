@@ -52,3 +52,10 @@ init_tuple_a = 1, 2
 init_tuple_b = (3, 4)
 [print(sum(x)) for x in [init_tuple_a + init_tuple_b]]
 
+
+def concatenate_strings(t):
+    return " ".join(t)
+
+input_tuple = ('Hello', 'World', 'from', 'Python')
+output_string = concatenate_strings(input_tuple)
+print(output_string)
