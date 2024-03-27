@@ -20,4 +20,3 @@ print(StarCookie.__module__)
 cookie_3 = StarCookie("Black",25,2)
 cookie_3.add_cream(3)
 print(cookie_3.cream)
-
