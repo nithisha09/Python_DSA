@@ -68,14 +68,101 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
+    def search(self,x):
+        temp = self.head
+        count = 0
+        while temp:
+            if temp.value == x:
+                return count
+            temp = temp.next
+            count += 1
+        return -1
+    
+    def get(self,index):
+        if index<0 or index>=self.length:
+            return -1
+        else:
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+            return temp.value
+        
+    def set(self,index,val):
+        if index<0 or index>=self.length:
+            return False
+        else:
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+            temp.value = val
+            return True
+        # we can also use get method within this class
+    
+    def pop_first(self):
+        if self.head:
+            if self.length == 1:
+                self.head = self.tail = None
+            else:
+                pop = self.head
+                self.head = self.head.next
+                pop.next = None
+            self.length -= 1
+            return True
+        return False
+    
+    def pop(self):
+        if self.head:
+            if self.length == 1:
+                self.head = self.tail = None
+            else:
+                temp = self.head
+                # while temp.next.next:
+                while temp.next is not self.tail:
+                    temp = temp.next
+                self.tail = temp
+                self.tail.next = None
+            self.length -= 1
+            return True
+        return False
+    
+    def remove(self,index):
+        if index<=0 or index>=self.length or index == self.length-1:
+            return False
+            # can use pop_first/pop method
+        if self.head:
+            if self.length == 1:
+                self.head = self.tail = None
+            else:
+                temp = self.head
+                for _ in range(index-1):
+                    temp = temp.next
+                pop = temp.next
+                temp.next = temp.next.next
+                pop.next = None
+            self.length -= 1
+            return True
+        return False
+    # Can use get method
+
+    def delete_all(self):
+        self.head = self.tail = None
+        self.length = 0
+        
 my_linked_list = LinkedList(9)
 my_linked_list.append(15)
-# my_linked_list.append(16)
-# my_linked_list.append(20)
-# my_linked_list.prepend(0)
+my_linked_list.append(16)
+my_linked_list.append(20)
+my_linked_list.prepend(0)
 # my_linked_list.insert(0,15.5)
 # my_linked_list.insert(-1,100)
+# print(my_linked_list.length)
+# my_linked_list.traverse()
+# print(my_linked_list.search(20))
+# print(my_linked_list.get(-3))
+# print(my_linked_list.set(0,100))
+# print(my_linked_list.pop_first())
+# print(my_linked_list.pop())
+# print(my_linked_list.remove(4))
+my_linked_list.delete_all()
 print(my_linked_list)
-print(my_linked_list.length)
-my_linked_list.traverse()
 
