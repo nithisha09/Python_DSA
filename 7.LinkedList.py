@@ -117,7 +117,7 @@ class LinkedList:
             else:
                 temp = self.head
                 # while temp.next.next:
-                while temp.next is not self.tail:
+                while temp.next.next is not None:
                     temp = temp.next
                 self.tail = temp
                 self.tail.next = None
@@ -161,8 +161,10 @@ my_linked_list.prepend(0)
 # print(my_linked_list.get(-3))
 # print(my_linked_list.set(0,100))
 # print(my_linked_list.pop_first())
-# print(my_linked_list.pop())
+print(my_linked_list.pop())
 # print(my_linked_list.remove(4))
-my_linked_list.delete_all()
+# my_linked_list.delete_all()
 print(my_linked_list)
 
+12345
+1234
