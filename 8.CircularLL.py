@@ -194,6 +194,27 @@ class CSLL:
             temp = temp.next
             if temp.next is self.head:
                 return False
+
+    def delete_key(self,key):
+        if self.head.val == key:
+            temp = self.head
+            while temp.next!=self.head:
+                temp = temp.next
+            if temp == self.head:
+                self.head = None
+            else:
+                temp.next = self.head.next
+                self.head = temp.next
+            self.length -= 1
+            return True
+        else:
+            temp = self.head
+            while temp.next != self.head:
+                if temp.next.val == key:
+                    temp.next = temp.next.next
+                    self.length -= 1
+                    return True
+                temp = temp.next
 csll = CSLL()
 csll.append(10)
 csll.append(11)
@@ -211,5 +232,6 @@ print(csll)
 # print(csll.pop_first())
 # print(csll.pop())
 # print(csll.remove(3))
-csll.delete_all()
+# csll.delete_all()
+csll.delete_key(13)
 print(csll)
