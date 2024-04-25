@@ -63,12 +63,31 @@ class CDLL:
             temp = temp.next
             if temp is self.head:
                 break
+
+    def rev_traverse(self):
+        temp = self.tail
+        while temp:
+            print(temp.value)
+            temp = temp.prev
+            if temp is self.tail:
+                break
+    
+    def search(self,x):
+        temp = self.head
+        while temp:
+            if temp.value == x:
+                return True
+            temp = temp.next
+            if temp is self.head:
+                return False
 cdll = CDLL()
 cdll.append(100)
 cdll.append(200)
 cdll.prepend(50)
 print(cdll)
 cdll.traverse()
+cdll.rev_traverse()
+print(cdll.search(100))
 
 
 
