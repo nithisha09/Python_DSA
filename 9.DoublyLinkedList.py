@@ -51,6 +51,23 @@ class DLL:
         while temp:
             print(temp.value)
             temp = temp.next
+    
+    def rev_traverse(self):
+        temp = self.tail
+        while temp:
+            print(temp.value)
+            temp = temp.prev
+    
+    def search(self,x):
+        temp = self.head
+        count = 0
+        while temp:
+            if temp.value == x:
+                return count
+            temp = temp.next
+            count += 1
+        return -1
+            
 
 
 dll = DLL()
@@ -59,3 +76,5 @@ dll.append(20)
 dll.prepend(9)
 print(dll)
 dll.traverse()
+dll.rev_traverse()
+print(dll.search(20))
